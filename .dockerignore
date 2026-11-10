@@ -1,0 +1,8 @@
+.git
+.vscode
+venv
+target
+*.sql
+.env
+.env.*
+src/main/resources/db.properties
