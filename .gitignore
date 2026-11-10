@@ -1,0 +1,25 @@
+
+# Maven build output
+target/
+
+# Python environment
+venv/
+
+# Database credentials and secrets
+src/main/resources/db.properties
+.env
+.env.*
+
+# Java compiled files
+*.class
+
+# Logs
+*.log
+
+# Local database backups
+Dump*.sql
+hospital_management_backup.sql
+
+# IDE files
+.idea/
+.vscode/
