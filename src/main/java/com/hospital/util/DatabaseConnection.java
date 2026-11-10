@@ -88,36 +88,32 @@ public class DatabaseConnection {
     }
 
     // Test JDBC connection
-    public static void main(String[] args) {
+    // Test JDBC connection
+public static void main(String[] args) {
 
-        try (
-                Connection connection = getConnection();
-                Statement statement = connection.createStatement();
-                ResultSet result = statement.executeQuery(
-                        "SELECT DATABASE(), VERSION()"
-                )
-        ) {
+    try (
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(
+                    "SELECT DATABASE(), VERSION()"
+            )
+    ) {
 
-            if (result.next()) {
-                System.out.println(
-                        "MySQL Connection Successful!"
-                );
-
-                System.out.println(
-                        "Database: " + result.getString(1)
-                );
-
-                System.out.println(
-                        "MySQL Version: " + result.getString(2)
-                );
-            }
-
-        } catch (SQLException e) {
+        if (result.next()) {
+            System.out.println("MySQL Connection Successful!");
             System.out.println(
-                    "Database Connection Failed!"
+                    "Database: " + result.getString(1)
             );
-
-            e.printStackTrace();
+            System.out.println(
+                    "MySQL Version: " + result.getString(2)
+            );
         }
+
+    } catch (SQLException e) {
+        System.out.println("Database Connection Failed!");
+        e.printStackTrace();
     }
 }
+}
+
+
